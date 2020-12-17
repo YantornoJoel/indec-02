@@ -1,7 +1,8 @@
 const db = require('../lib/db');
 
 /**
- * Servicios : los servicios contienen las consultas de la base de datos y la devolución de objetos o errores de lanzamiento.
+ * Servicios : los servicios contienen las consultas de la base de datos y la devolución de objetos o errores de
+ *  lanzamiento.
  */
 
 class ExampleService {

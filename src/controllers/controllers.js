@@ -1,3 +1,4 @@
+const toUpper = require('lodash/toUpper');
 const ServicesApp = require('../services/servicesApp');
 
 class Controllers {
@@ -9,7 +10,7 @@ class Controllers {
 
             for (let i = 0; i < 3; i++) {
                 const item = items[i];
-                item.titular = item.titular.toUpperCase();
+                item.titular = toUpper(item.titular);
                 item.moneda === 'Pesos' ? item.moneda = '$' : item.moneda = 'us$';
             }
 

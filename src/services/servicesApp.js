@@ -6,7 +6,7 @@ class ServicesApp {
         const result = await db
             .select('titular', 'tipo_cuenta', 'moneda', 'nro_cuenta', 'cbu', 'banks.nombre')
             .table('accounts')
-            .leftJoin('banks', 'accounts.bank_id', 'banks.id');
+            .leftJoin('banks', 'accounts.bank_id', 'banks.id')
 
         return { items: result };
     }
@@ -30,10 +30,12 @@ class ServicesApp {
     }
 
     static async getBanksDate() {
+        const date = new Date('2020-11-16T19:28:02.000Z')
         const result = await db
             .select()
             .table('banks')
-            .where('created_at', 'like', '%2020-11-16%');
+            .where('created_at', date)
+        // .where('created_at', 'like', '%2020-11-16%');
 
         return { items: result };
     }
